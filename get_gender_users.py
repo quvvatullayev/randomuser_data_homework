@@ -15,7 +15,7 @@ def get_gender_users(data:dict) -> list:
     """
     list_gender = []
     for i in data["results"]:
-        for e,r in dict(i).items():
+        for e,r in i.items():
             if e == "gender":
                 list_gender.append(r)
     return list_gender
