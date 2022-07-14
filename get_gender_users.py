@@ -19,5 +19,4 @@ def get_gender_users(data:dict) -> list:
             if e == "gender":
                 list_gender.append(r)
     return list_gender
-
 print(get_gender_users(json.loads(open("randomuser_data.json").read())))
