@@ -18,10 +18,13 @@ def get_users_data(data:dict) -> list:
         for e,r in (i).items():
             if e == "name":
                 for w,q in r.items():
-                    if w == "first" or w == "last":
-                        dict1[w] = q
+                    if w == 'first':
+                        dict1["first_name"] = q
+
+                    elif w == 'last':
+                        dict1['last_name'] = q
             elif e == "phone":
-                dict1[e] = r
+                dict1["phone_number"] = r
             list1.append(dict1)
 
     list2 = []
@@ -29,6 +32,8 @@ def get_users_data(data:dict) -> list:
         if i not in list2:
             list2.append(i)
 
-    return list2
+    for i in list2:
+        print(i)
+    return ''
 
 print(get_users_data(json.loads(open("randomuser_data.json").read())))
